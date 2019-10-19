@@ -42,8 +42,10 @@ if ($userInput == "help") {
                     break;
                     case "-df";
                     $gestorDirectorios->borrarDirectorioForzado($parametros2);
+                    break;
                     default;
                     echo "El comando no se ha escrito correctamente... La sintaxis correcta es 'rm -d PARAM' o 'rm -df PARAM' según si quieres un borrado seguro o un borrado forzoso.", "<br>";
+                    break;
                 }
 // Switch intérprete de comandos, a falta de rellenar.
 

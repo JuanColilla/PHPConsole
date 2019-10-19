@@ -35,11 +35,10 @@ class Directorios {
     // rm -df:
     function borrarDirectorioForzado($directorio) {
         if (is_dir($directorio)) {
-            opendir($directorio);
-            while (($file = readdir($directorio)) !== false) {
+            $files = scandir($directorio);
+            foreach ($files as $file) {
                 unlink($file);
             }
-            closedir($directorio);
             rmdir($directorio);
             echo "El directorio y todos los archivos que contenía han sido borrados satisfactoriamente.", "<br>";
         } else {
