@@ -7,7 +7,7 @@ class Directorios {
     }
 
     // mkdir
-    function crearDirectorio($directorio) {
+    function crear_directorio($directorio) {
         if (!is_dir($directorio)) {
             mkdir($directorio);
             echo "El directorio se ha creado satisfactoriamente.", "<br>";
@@ -18,7 +18,7 @@ class Directorios {
     }
 
     // rm -d
-    function borrarDirectorio($directorio) {
+    function borrar_directorio($directorio) {
         if (is_dir($directorio)) {
             $filesList = scandir($directorio);
             if (empty($filesList)) {
@@ -33,7 +33,7 @@ class Directorios {
     }
 
     // rm -df:
-    function borrarDirectorioForzado($directorio) {
+    function borrar_directorio_forzado($directorio) {
         if (is_dir($directorio)) {
             $files = scandir($directorio);
             foreach ($files as $file) {
@@ -46,16 +46,22 @@ class Directorios {
         }
     }
 
-
-    function moverDirectorio($directorio, $nuevaRutaDirectorio) {
-
+    // mv -d
+    function mover_directorio($directorio, $nuevaRutaDirectorio) {
+        if (is_dir($directorio)) {
+            rename($directorio, $nuevaRutaDirectorio);
+        } else {
+            echo "El directorio especificado no existe o no es un directorio en si.", "<br>";
+        }
     }
 
-
-    function copiarDirectorio($directorio, $rutaCopiaDirectorio) {
-
+    // cp -d
+    function copiar_directorio($directorio, $rutaCopiaDirectorio) {
+        if (is_dir($directorio)) {
+            copy($directorio, $rutaCopiaDirectorio);
+        } else {
+            echo "El directorio especificado no existe o no es un directorio en si.", "<br>";
+        }
     }
-
-    // Falta terminar funciones de Directorios, Sistemas y de Archivos.
 
 }

@@ -29,19 +29,20 @@ if ($userInput == "help") {
     $comando = $entradaDividida[0];
     $parametros1 = $entradaDividida[1];
     $parametros2 = $entradaDividida[2];
+    $parametros3 = $entradaDividida[3];
 }
 
         switch ($comando) {
             case "mkdir";
-            $gestorDirectorios->crearDirectorio($parametros1);
+            $gestorDirectorios->crear_directorio($parametros1);
             break;
             case "rm";
                 switch ($parametros1) {
                     case "-d";
-                    $gestorDirectorios->borrarDirectorio($parametros2);
+                    $gestorDirectorios->borrar_directorio($parametros2);
                     break;
                     case "-df";
-                    $gestorDirectorios->borrarDirectorioForzado($parametros2);
+                    $gestorDirectorios->borrar_directorio_forzado($parametros2);
                     break;
                     case "-f";
 
@@ -51,7 +52,7 @@ if ($userInput == "help") {
                     break;
                 }
             case "mv";
-
+                $gestorDirectorios->mover_directorio();
             break;
             case "cp";
 
@@ -72,7 +73,7 @@ if ($userInput == "help") {
 
             break;
             case "df";
-            
+
             break;
 
         }
