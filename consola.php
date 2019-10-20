@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <title>PHP Console</title>
@@ -15,5 +15,3 @@
 
 </body>
 </html>
-
-// Practicamente terminado, retocar 4 cosas restantes.

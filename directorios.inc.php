@@ -2,9 +2,7 @@
 
 class Directorios {
 
-    function Directorios() {
-
-    }
+    function __construct() {}
 
     // mkdir
     function crear_directorio($directorio) {
@@ -14,7 +12,6 @@ class Directorios {
         } else {
             echo "El directorio que intentas crear ya existe.";
         }
-
     }
 
     // rm -d
