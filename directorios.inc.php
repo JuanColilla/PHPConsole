@@ -44,9 +44,10 @@ class Directorios {
     }
 
     // mv -d
-    function mover_directorio($directorio, $nuevaRutaDirectorio) {
+    function mover_directorio($directorio, $ruta_destino) {
         if (is_dir($directorio)) {
-            rename($directorio, $nuevaRutaDirectorio);
+            rename($directorio, ($ruta_destino . DIRECTORY_SEPARATOR . $directorio));
+            echo "Directorio movido satisfactoriamente.", "<br>";
         } else {
             echo "El directorio especificado no existe o no es un directorio en si.", "<br>";
         }
@@ -55,7 +56,8 @@ class Directorios {
     // cp -d
     function copiar_directorio($directorio, $rutaCopiaDirectorio) {
         if (is_dir($directorio)) {
-            copy($directorio, $rutaCopiaDirectorio);
+            mkdir($rutaCopiaDirectorio, 0755);
+            echo "Directorio copiado satisfactoriamente.", "<br>";
         } else {
             echo "El directorio especificado no existe o no es un directorio en si.", "<br>";
         }

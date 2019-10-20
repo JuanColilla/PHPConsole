@@ -40,6 +40,7 @@ class Archivos {
     function borrar_fichero($fichero) {
         if (file_exists($fichero)) {
             unlink($fichero);
+            echo "Archivo borrado satisfactoriamente.", "<br>";
         } else {
             echo "El fichero que intentas borrar no existe.", "<br>";
         }
@@ -48,7 +49,8 @@ class Archivos {
     // mv -f
     function mueve_fichero($fichero, $ruta_destino) {
         if (file_exists($fichero)) {
-            rename($fichero, $ruta_destino);
+            rename($fichero, ($ruta_destino . DIRECTORY_SEPARATOR . $fichero));
+            echo "Archivo movido satisfactoriamente.", "<br>";
         } else {
             echo "El archivo que intentas mover no existe.", "<br>";
         }
@@ -58,6 +60,7 @@ class Archivos {
     function copia_fichero($fichero, $ruta_destino) {
         if (file_exists($fichero)) {
             copy($fichero, $ruta_destino);
+            echo "Fichero copiado correctamente", "<br>";
         } else {
             echo "El fichero que intentas copiar no existe.", "<br>";
         }

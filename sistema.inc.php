@@ -37,6 +37,11 @@ class Sistema {
         echo getcwd();
     }
 
+    // cd
+    function cambiarRuta() {
+
+    }
+
     //
     function stats_sistema() {
         $sysStats = Array();

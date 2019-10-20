@@ -77,7 +77,7 @@ $parametros3 = $entradaDividida[3];
         $gestorArchivos->buscar_fichero($parametros1, $parametros2);
         break;
         case "stats";
-        $gestorArchivos->status_fichero($parametros2);
+        $gestorArchivos->status_fichero($parametros1);
         break;
         case "vim";
         $gestorArchivos->creaOmodifica_fichero($parametros2, $parametros3);
